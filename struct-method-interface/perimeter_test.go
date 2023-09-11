@@ -16,24 +16,27 @@ func TestPerimeter(t *testing.T) {
 	})
 }
 
+// table driven testing
+// a great fit when you wish to test various implementations of an interface
+// or if the data being passed in to a function has lots of different requirements that need testing.
 func TestArea(t *testing.T) {
 
-	checkArea := func(t testing.TB, shape Shape, want float64) {
-		t.Helper()
-		got := shape.Area()
-		if got != want {
-			t.Errorf("got %g want %g", got, want)
-		}
+	// anonymous struct
+	areaTests := []struct {
+		shape Shape
+		want  float64
+	}{
+		// input, output
+		{Rectangle{12, 6}, 72.0},
+		{Circle{10}, 314.1592653589793},
+		{Triangle{5, 10}, {25}},
 	}
 
-	t.Run("rectangles", func(t *testing.T) {
-		rectangle := Rectangle{12, 6}
-		checkArea(t, rectangle, 72.0)
-	})
-
-	t.Run("circles", func(t *testing.T) {
-		circle := Circle{10}
-		checkArea(t, circle, 314.1592653589793)
-	})
+	for _, testCase := range areaTests {
+		got := testCase.shape.Area()
+		if got != testCase.want {
+			t.Errorf("Nope")
+		}
+	}
 
 }
