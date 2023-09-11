@@ -14,3 +14,7 @@
 5. variadic functions: take a variable number of arguements
     - `func test (numbersToSum ...[]int) int`
     - It means I can pass 1, 2, 3+ []int into the test function
+6. Function is diff from method
+    - method is a fucntion with a receiver
+    - `func (receiver receiverBase / struct) <name>() <return type>`
+    - E.g. `func (c Circle) Area() float64`

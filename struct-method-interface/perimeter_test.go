@@ -4,29 +4,36 @@ import (
 	"testing"
 )
 
-func assertGotEqualWant(got, want float64, t testing.TB) {
-	t.Helper()
-	if got != want {
-		t.Errorf("expected %.2f but got %.2f", want, got)
-	}
-}
-
 func TestPerimeter(t *testing.T) {
 	t.Run("Test retangle", func(t *testing.T) {
 		rectangle := Rectangle{10.0, 10.0}
 		got := Preimeter(rectangle)
 		want := 40.0
 
-		assertGotEqualWant(got, want, t)
+		if got != want {
+			t.Errorf("got %g want %g", got, want)
+		}
 	})
 }
 
 func TestArea(t *testing.T) {
-	t.Run("Test retangle", func(t *testing.T) {
-		rectangle := Rectangle{10.0, 10.0}
-		got := Area(rectangle)
-		want := 100.0
 
-		assertGotEqualWant(got, want, t)
+	checkArea := func(t testing.TB, shape Shape, want float64) {
+		t.Helper()
+		got := shape.Area()
+		if got != want {
+			t.Errorf("got %g want %g", got, want)
+		}
+	}
+
+	t.Run("rectangles", func(t *testing.T) {
+		rectangle := Rectangle{12, 6}
+		checkArea(t, rectangle, 72.0)
 	})
+
+	t.Run("circles", func(t *testing.T) {
+		circle := Circle{10}
+		checkArea(t, circle, 314.1592653589793)
+	})
+
 }
