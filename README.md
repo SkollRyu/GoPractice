@@ -21,6 +21,7 @@
 7. Interface is implicit, no keyword `implement`
     - `type <name> interface`
     - once other struct implements all the methods from interface, it is already using that interface
+    - Declaring interfaces so you can define functions that can be used by different types (Parametric polymorphism)
 8. Table-driven test
     - Each table entry is a complete test case with inputs and expected results
     - create anonymous struct: `[]struct{ interface InterfaceBase ...}{{test case input, output}, {test case 2 input, output},}`
