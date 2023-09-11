@@ -17,4 +17,7 @@
 6. Function is diff from method
     - method is a fucntion with a receiver
     - `func (receiver receiverBase / struct) <name>() <return type>`
-    - E.g. `func (c Circle) Area() float64`
+    - E.g. `func (c Circle) Area() float64
+7. Interface is implicit, no keyword `implement`
+    - `type <name> interface`
+    - once other struct implements all the methods from interface, it is already using that interface
