@@ -26,3 +26,8 @@
     - Each table entry is a complete test case with inputs and expected results
     - create anonymous struct: `[]struct{ interface InterfaceBase ...}{{test case input, output}, {test case 2 input, output},}`
     - loop over test case: `for _, testCase := range testCases {...}`
+9. New type from existing one
+    - except `struct`, we can create a less overkilled type
+    - syntax: `type <MyName> <OriginalType>`
+    - E.g: `type Bitcoin int`
+    - we can also declare methods for the type 

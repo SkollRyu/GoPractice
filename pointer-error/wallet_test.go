@@ -13,10 +13,11 @@ func TestWallet(t *testing.T) {
 	got := wallet.Balance()
 
 	fmt.Printf("address of balance in test is %v \n", &wallet.balance)
+	// should be %p for pointer
 
-	want := 10
+	want := Bitcoin(10)
 
 	if got != want {
-		t.Errorf("got %d, but want %d", got, want)
+		t.Errorf("got %s, but want %s", got, want)
 	}
 }
