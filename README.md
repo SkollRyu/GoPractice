@@ -1,4 +1,5 @@
 # GoPractice
+I followed [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests) to learn GO in a TDD approach
 
 ## Key takeaway
 1. There is a built-in testing package support
