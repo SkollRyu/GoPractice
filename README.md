@@ -30,4 +30,17 @@
     - except `struct`, we can create a less overkilled type
     - syntax: `type <MyName> <OriginalType>`
     - E.g: `type Bitcoin int`
-    - we can also declare methods for the type 
+    - we can also declare methods for the type
+10. Pointer
+    - Go copies values when you pass them to functions/methods, so if you're writing a function that needs to mutate state you'll need it to take a pointer to the thing you want to change.
+    - pass a reference. Examples include referencing very large data structures or things where only one instance is necessary (like database connection pools)
+    - `func Add(x int)` which take an integer as the parameter.
+    - `func AddPtr(x *int)` which takes a pointer integer as the parameter.
+    - `AddPtr(&abc)` which pass the memory address
+11. nil
+    - Pointers can be nil
+    - When a function returns a pointer to something, you need to make sure you check if it's nil or you might raise a runtime exception - the compiler won't help you here.
+    - Useful for when you want to describe a value that could be missing
+12. Errors
+    - Errors are the way to signify failure when calling a function/method.
+    - 
