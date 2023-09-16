@@ -18,6 +18,7 @@ I followed [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests) to
 6. Function is diff from method
     - method is a fucntion with a receiver
     - `func (receiver receiverBase / struct) <name>() <return type>`
+    - `func (t Type) methodName(parameter list)`
     - E.g. `func (c Circle) Area() float64
 7. Interface is implicit, no keyword `implement`
     - `type <name> interface`
