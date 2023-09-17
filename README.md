@@ -1,6 +1,25 @@
 # GoPractice
 I followed [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests) to learn GO in a TDD approach
 
+## Nice hacks
+
+In our function signature we have made a named return value (prefix string).
+This will create a variable called prefix in your function.
+This will also display in the Go Doc, so it makes things easier
+```
+func greetingPrefix(language string) (prefix string) {
+	switch language {
+	case french:
+		prefix = frenchHelloPrefix
+	case spanish:
+		prefix = spanishHelloPrefix
+	default:
+		prefix = englishHelloPrefix
+	}
+	return
+}
+```
+
 ## Key takeaway
 1. There is a built-in testing package support
     - all test file name with `xxx_test.go`
